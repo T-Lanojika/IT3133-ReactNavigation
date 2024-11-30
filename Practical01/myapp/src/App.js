@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
-import Contactus from './components/Contactus';
+import ContactUs from './components/ContactUs';
 import Home from './components/Home';
 
 
@@ -22,7 +22,7 @@ function App(){
                 <Routes>
                     <Route path='/home' element={<Home/>}/>
                     <Route path='/about' element={<AboutUs/>}/>
-                    <Route path='/contact' element={<Contactus/>}/>
+                    <Route path='/contact' element={<ContactUs/>}/>
                 </Routes>
             </Router>
         </div>
