@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../css/styles.css";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -15,7 +16,6 @@ export default function Login() {
     };
 
     const authenticate = () => {
-        // Hardcoded credentials for demonstration
         const validUsername = "admin";
         const validPassword = "1234";
 
@@ -27,27 +27,30 @@ export default function Login() {
     };
 
     return (
-        <div style={{ padding: "20px", maxWidth: "400px", margin: "0 auto" }}>
+        <div className="login-container">
             <h1>Login</h1>
-            <form>
-                <label>Username: </label>
+            <form className="login-form">
+                <label>Username:</label>
                 <input
                     type="text"
                     value={username}
                     onChange={handleUsernameChange}
-                    style={{ display: "block", marginBottom: "10px" }}
                 />
-                <label>Password: </label>
+                <label>Password:</label>
                 <input
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
-                    style={{ display: "block", marginBottom: "10px" }}
                 />
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        authenticate();
+                    }}
+                >
+                    Login
+                </button>
             </form>
-            <button onClick={authenticate} style={{ marginTop: "10px" }}>
-                Login
-            </button>
         </div>
     );
 }
